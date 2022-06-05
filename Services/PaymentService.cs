@@ -25,7 +25,6 @@ namespace paymentWithPaymob.Services
             {
                 string URL = "https://accept.paymob.com/api/auth/tokens";
                 var keyobject = new { api_key = 
-                                        "ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6VXhNaUo5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2libUZ0WlNJNkltbHVhWFJwWVd3aUxDSndjbTltYVd4bFgzQnJJam94T0RjeU1UWjkub0VITDQ3cThpdUs1V0tLUUJKS0VPYVVwT0x6V2d3VWFkSi1zSklOaGw5RlAtQXR6UjRDVlR3WWRZa2NQTnkzX3ZlTXpiWEk5Y3Fod3JqSDZ2NXQ2Qnc="
                                     };
                 var seralizedobj = new StringContent(JsonConvert.SerializeObject(keyobject), Encoding.UTF8, "application/json");
                 var response = await _client.PostAsync(URL, seralizedobj);
@@ -119,7 +118,7 @@ namespace paymentWithPaymob.Services
                         State = "state"
                     },
                     Currency = "EGP",
-                    IntegrationId =2176892
+                    IntegrationId =
                 };
                 var SerializedRequestedObj = new StringContent(JsonConvert.SerializeObject(RequestedData), Encoding.UTF8, "application/json");
                 var response = await _client.PostAsync(URL, SerializedRequestedObj);
