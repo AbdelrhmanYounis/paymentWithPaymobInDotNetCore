@@ -24,7 +24,7 @@ namespace paymentWithPaymob.Services
             try
             {
                 string URL = "https://accept.paymob.com/api/auth/tokens";
-                var keyobject = new { api_key = 
+                var keyobject = new { api_key = ""
                                     };
                 var seralizedobj = new StringContent(JsonConvert.SerializeObject(keyobject), Encoding.UTF8, "application/json");
                 var response = await _client.PostAsync(URL, seralizedobj);
@@ -118,7 +118,7 @@ namespace paymentWithPaymob.Services
                         State = "state"
                     },
                     Currency = "EGP",
-                    IntegrationId =
+                    IntegrationId =0
                 };
                 var SerializedRequestedObj = new StringContent(JsonConvert.SerializeObject(RequestedData), Encoding.UTF8, "application/json");
                 var response = await _client.PostAsync(URL, SerializedRequestedObj);
